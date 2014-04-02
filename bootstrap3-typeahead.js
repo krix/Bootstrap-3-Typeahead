@@ -17,6 +17,10 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
+ * This is a forked version, maintained by Dirk Bunk: https://github.com/krix/Bootstrap-3-Typeahead/bootstrap3-typeahead.js
+ * Changes:
+ * 02.04.2014, Dirk Bunk: Changed 'process' function to display only the number of items defined, when 'options.minLength' is set to 0.
  * ============================================================ */
 
 
@@ -124,7 +128,7 @@
         return this.shown ? this.hide() : this;
       }
 
-      if (this.options.items == 'all' || this.options.minLength === 0 && !this.$element.val()) {
+      if (this.options.items == 'all') {
         return this.render(items).show();
       } else {
         return this.render(items.slice(0, this.options.items)).show();
